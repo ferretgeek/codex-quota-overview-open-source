@@ -16,7 +16,7 @@ A local Windows quota dashboard for bulk-importing auth `JSON` files, querying l
 
 ## Screenshots
 
-> The screenshots below are sanitized.
+> The screenshots below are sanitized. Quota and exchange-rate numbers in the screenshots are illustrative only; actual runtime values should follow the current application logic.
 
 ### 1. Light theme overview
 
@@ -115,4 +115,3 @@ npm run build
 - This repository does not include any real credentials, imported pools, scan results, or runtime logs
 - Do not commit real auth files or runtime output directories
 - Packaged runtime builds should be published through GitHub Releases
-
