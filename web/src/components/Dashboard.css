@@ -1,0 +1,316 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.metric-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.metric-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+.icon-wrapper {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-text);
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, var(--accent-base) 0%, var(--accent-hover) 100%);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.metric-value {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.shimmer-text {
+    background: linear-gradient(90deg, var(--text-primary) 0%, var(--text-tertiary) 50%, var(--text-primary) 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: textShimmer 3s linear infinite;
+}
+
+.currency-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.currency-card {
+    min-width: 0;
+    min-height: 154px;
+    padding: 18px 12px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-subtle);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--bg-hover) 84%, transparent) 0%, color-mix(in srgb, var(--bg-card) 92%, transparent) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--text-primary) 8%, transparent);
+}
+
+.currency-value {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 0.95vw + 1.45rem, 2.95rem);
+    font-weight: 900;
+    line-height: 0.94;
+    letter-spacing: -0.05em;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.currency-value--compact {
+    font-size: clamp(1.7rem, 0.7vw + 1.15rem, 2.25rem);
+    letter-spacing: -0.04em;
+}
+
+.currency-label {
+    font-size: clamp(1.02rem, 0.28vw + 0.94rem, 1.22rem);
+    font-weight: 800;
+    line-height: 1.18;
+}
+
+.currency-hint {
+    max-width: 100%;
+    color: var(--text-tertiary);
+    font-size: clamp(0.9rem, 0.2vw + 0.84rem, 1rem);
+    font-weight: 600;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+@keyframes textShimmer {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.text-success {
+    color: var(--status-success);
+    font-weight: 500;
+}
+
+.text-warning {
+    color: var(--status-warning);
+    font-weight: 500;
+}
+
+.charts-grid-full {
+    display: block;
+    width: 100%;
+}
+
+.distribution-card-full {
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.distribution-list-horizontal {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.dist-item-horiz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px;
+    background: transparent;
+    border-radius: var(--radius-lg);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.dist-item-horiz:hover {
+    transform: translateY(-4px);
+}
+
+.dist-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.dist-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px currentColor;
+    /* Soft glow matching color */
+}
+
+.dist-dot.shine {
+    animation: pulseGlow 2s infinite ease-in-out alternate;
+}
+
+/* SVG Ring Animation */
+.dist-ring svg circle {
+    transition: stroke-dashoffset 1.5s ease-out;
+}
+
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+.bg-success {
+    background-color: var(--status-success);
+    color: var(--status-success);
+}
+
+.bg-warning {
+    background-color: var(--status-warning);
+    color: var(--status-warning);
+}
+
+.bg-error {
+    background-color: var(--status-error);
+    color: var(--status-error);
+}
+
+.bg-disabled {
+    background-color: var(--status-disabled);
+    color: var(--status-disabled);
+}
+
+.dist-bar-wrapper {
+    display: flex;
+    height: 32px;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    gap: 4px;
+    background-color: var(--bg-card);
+    padding: 3px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--border-subtle);
+    position: relative;
+}
+
+.dist-bar-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.05) 100%);
+    z-index: 10;
+    pointer-events: none;
+    border-radius: var(--radius-full);
+}
+
+.dist-bar-segment {
+    height: 100%;
+    border-radius: var(--radius-full);
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset -2px 0 6px rgba(0, 0, 0, 0.15);
+}
+
+.dist-bar-segment::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(45deg,
+            rgba(255, 255, 255, 0.25) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.25) 50%,
+            rgba(255, 255, 255, 0.25) 75%,
+            transparent 75%,
+            transparent);
+    background-size: 30px 30px;
+    animation: moveStripes 1.5s linear infinite;
+    z-index: 5;
+}
+
+@keyframes moveStripes {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 30px 0;
+    }
+}
+
+.dist-bar-segment::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: swipeLight 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    z-index: 6;
+}
+
+@keyframes swipeLight {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 200%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}

@@ -1,0 +1,21 @@
+# Runtime data
+bin/
+imports/
+logs/
+results/
+.backend.pid
+
+# Frontend build / dependencies
+web/node_modules/
+web/dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Release artifacts
+*.zip
+*.7z
+

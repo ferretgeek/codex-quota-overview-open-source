@@ -1,0 +1,205 @@
+.account-list-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.list-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-subtle);
+    background-color: transparent;
+}
+
+.toolbar-left,
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--glass-bg);
+    border: 1px solid var(--border-subtle);
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    width: 320px;
+    transition: all var(--transition-fast);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.search-box:focus-within {
+    border-color: var(--accent-base);
+    box-shadow: 0 0 0 3px var(--accent-glow), inset 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.search-box input:focus {
+    outline: none;
+}
+
+.btn-icon-only {
+    padding: 8px;
+    border-radius: var(--radius-full);
+}
+
+.refresh-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.divider {
+    width: 1px;
+    height: 24px;
+    background-color: var(--border-strong);
+    opacity: 0.5;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.account-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+}
+
+.account-table th {
+    padding: 16px 16px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    border-bottom: 1px solid var(--border-strong);
+    position: sticky;
+    top: 0;
+    backdrop-filter: var(--glass-blur);
+    background-color: var(--bg-card);
+    z-index: 5;
+}
+
+.table-row td {
+    padding: 18px 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    vertical-align: middle;
+    transition: background-color var(--transition-fast);
+}
+
+.table-row:hover td {
+    background-color: var(--bg-hover);
+}
+
+.table-row.selected td {
+    background-color: var(--accent-glow);
+}
+
+.checkbox-wrapper {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-tertiary);
+    transition: color var(--transition-fast);
+}
+
+.checkbox-wrapper:hover {
+    color: var(--text-primary);
+}
+
+.icon-active {
+    color: var(--accent-base);
+    filter: drop-shadow(0 0 4px var(--accent-glow));
+}
+
+.account-email {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+.plan-tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+}
+
+.quota-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: var(--border-subtle);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+}
+
+.bg-success-fill {
+    background: linear-gradient(90deg, #10B981, #34D399);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.bg-warning-fill {
+    background: linear-gradient(90deg, #F59E0B, #FBBF24);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+.bg-error-fill {
+    background: linear-gradient(90deg, #EF4444, #F87171);
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}
+
+.list-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: transparent;
+}
+
+.pagination {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
